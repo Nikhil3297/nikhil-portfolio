@@ -79,7 +79,7 @@ export const socials: Social[] = [
 export const home = {
   title: { lead: "Transforming Ideas", mid: "Into", accent: "Digital Reality" },
   intro:
-    "I'm Nikhil, a Web Developer from Navi Mumbai with 4+ years of experience building and customizing WordPress, WooCommerce and Shopify websites — 50+ client projects delivered across e-commerce, travel, shipping, real estate and consulting.",
+    "I'm Nikhil, a Web Developer from Navi Mumbai with 4+ years of experience building and customizing WordPress, WooCommerce and Shopify websites — 50+ client projects delivered across e-commerce, travel, shipping, real estate and consulting. Improved website speed from 40 to 95+ on PageSpeed.",
 };
 
 /* ------------------------------------------------------------------ */
@@ -142,7 +142,7 @@ export const about = {
         },
         {
           title: "Practices",
-          chips: ["Page Speed Optimisation", "Technical SEO", "Site Migration", "Responsive Web Design"],
+          chips: ["Page Speed", "Core Web Vitals", "Technical SEO", "Site Migration", "WordPress Security", "Responsive Web Design"],
         },
       ],
     },
@@ -295,9 +295,10 @@ export const experience: Job[] = [
     role: "Web Developer",
     period: "Sep 2024 - Mar 2026",
     points: [
-      "Built and customized Shopify stores for 1 year: products, payments, shipping, apps and Liquid edits.",
+      "Built and customized a Shopify store over 1 year: products, payments, shipping, apps and Liquid edits.",
+      "Improved website speed, raising the PageSpeed score from 40 to 95+ on mobile and desktop.",
       "Built WordPress landing pages and fixed layout and code bugs using PHP, CSS and JavaScript.",
-      "Improved technical SEO and page speed, set up GA4 and GTM, and published 10–20 SEO blogs a month.",
+      "Improved technical SEO, set up GA4 and GTM, and published 10–20 SEO blogs a month.",
     ],
   },
   {
@@ -307,7 +308,7 @@ export const experience: Job[] = [
     points: [
       "Customized themes and plugins for 10–20 client sites using child themes, hooks, ACF and custom post types.",
       "Sped up client sites with caching, WebP images, lazy loading, plugin cleanup and CDN setup.",
-      "Fixed responsive bugs, plugin conflicts, malware infections, and SMTP and checkout issues.",
+      "Fixed responsive and cross-browser bugs, plugin conflicts, malware infections, and SMTP issues.",
     ],
   },
   {
