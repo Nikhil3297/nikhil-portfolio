@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  /* Ink: headings and main text. */
+  --color-primary: #131424;
+  /* Body copy and secondary text. */
+  --color-muted: #5b5d6b;
+  /* Borders and dividers. */
+  --color-line: #e8e6df;
+  /* Off-white used to alternate section backgrounds. */
+  --color-soft: #fbfaf5;
+  /* Yellow highlight — fills, markers, icons. */
+  --color-accent: #facc15;
+  /* Darker gold for small text on white, where plain yellow would be hard to read. */
+  --color-accent-dark: #a16207;
+  --color-amber: #f59e0b;
+  --color-violet: #4a22bd;
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 960px;
+  --breakpoint-xl: 1200px;
+
+  --animate-spin-slow: spin 6s linear infinite;
+  --animate-spin-slower: spin 40s linear infinite;
+  --animate-spin-slower-reverse: spin 40s linear infinite reverse;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+}
+
+@theme inline {
+  --font-sora: var(--font-sora-family), sans-serif;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+
+/* Yellow highlighter-pen stroke behind a word. */
+@utility highlight {
+  background-image: linear-gradient(
+    transparent 58%,
+    var(--color-accent) 58%,
+    var(--color-accent) 90%,
+    transparent 90%
+  );
+  padding-inline: 0.08em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.translate-z-0 {
+  transform: translateZ(0px);
+}
+
+/* White page with a faint dot grid. Fixed so it stays put while scrolling. */
+.bg-site {
+  background-color: #ffffff;
+  background-image: radial-gradient(circle at 1px 1px, rgb(19 20 36 / 0.08) 1px, transparent 0);
+  background-size: 28px 28px;
+  background-attachment: fixed;
+}
+
+/* Soft yellow glow behind the avatar in the hero. */
+.bg-explosion {
+  background-image:
+    radial-gradient(circle at 66% 46%, rgb(250 204 21 / 0.35), transparent 26%),
+    radial-gradient(circle at 80% 66%, rgb(245 158 11 / 0.18), transparent 24%),
+    radial-gradient(circle at 86% 24%, rgb(253 224 71 / 0.25), transparent 16%);
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--color-primary) !important;
+  opacity: 0.2 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-accent) !important;
+  opacity: 1 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-accent-dark) !important;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-primary overflow-x-hidden leading-relaxed;
+  }
+  ::selection {
+    @apply bg-accent text-primary;
+  }
+  .h1 {
+    @apply text-[35px] leading-tight md:text-[60px] md:leading-[1.3] mb-8 font-semibold;
+  }
+  .h2 {
+    @apply text-[35px] leading-tight md:text-[54px] md:leading-[1.3] mb-4 font-semibold;
+  }
+  p {
+    @apply leading-[1.8] text-muted;
+  }
+  .btn,
+  .input {
+    @apply h-13;
+  }
+  .input {
+    @apply w-full rounded-lg pl-6;
+  }
+  .input,
+  .textarea {
+    @apply bg-white outline-hidden focus:ring-2 focus:ring-accent focus:border-accent border border-line placeholder:text-primary/35 transition-shadow;
+  }
+  .textarea {
+    @apply w-full min-h-32 p-6 rounded-lg resize-none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
